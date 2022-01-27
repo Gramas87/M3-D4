@@ -22,16 +22,16 @@ window.onload = () => {
                  
                  </ul>
                  <div class="card-body">
-                 <button type="button" class="btn btn-primary" onclick = "addToCart" >Add to cart</button>
+                 <button type="button" class="btn btn-primary" onclick = "addToCart()" >Add to cart</button>
                  <button type="button" class="btn btn-primary" onclick = "skip(event)" >Skip</button>
                  </div>
                  </div>
                  </div>`
                  row.appendChild(book)
+               
             
         }
-
-    
+        
         
  
 })
@@ -39,4 +39,11 @@ window.onload = () => {
 
 const skip = event => event.target.closest('.card').remove()
 
-const addToCart = event => event.target
+
+const addToCart = () => {
+     const cart = document.querySelector(".cart")
+     const newbook = document.createElement("li")                               //has to be something like this...
+     newbook.innerHTML = event.target.closest('.card-title'.innerHTML)
+     cart.appendChild(newbook)
+
+}
